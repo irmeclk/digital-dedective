@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dedektif: Sınav Sorusu Vakası</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div>
+        <h1>Dedektif Sorgu Simülatörü</h1>
+        <p class="sub">Vaka: Sınav soruları çalındı — Şüpheli ile yüzleş.</p>
+      </div>
+      <div class="stats">
+        <div class="chip">Şüphe: <span id="suspicion">0</span></div>
+        <div class="chip">Stres: <span id="stress">0</span></div>
+        <div class="chip">Çelişki: <span id="contradictions">0</span></div>
+      </div>
+    </header>
+
+    <main class="grid">
+      <section class="panel chat">
+        <div id="chatLog" class="chatLog" aria-live="polite"></div>
+
+        <div class="composer">
+          <div class="hint">Butonlardan bir soru seç. (MVP: serbest yazı yok)</div>
+          <div id="actions" class="actions"></div>
+        </div>
+      </section>
+
+      <aside class="panel side">
+        <h2>Kanıtlar</h2>
+        <div id="evidenceList" class="evidenceList"></div>
+
+        <hr />
+
+        <h2>İtham</h2>
+        <p class="muted">Yeterince çelişki yakaladıysan “İtham Et” ile bitir.</p>
+        <button id="accuseBtn" class="danger">İTHAM ET</button>
+
+        <div id="verdict" class="verdict" hidden></div>
+      </aside>
+    </main>
+
+    <footer class="footer">
+      <span class="muted">Not: Bu demo “state + karar mekanizması + tutarlılık/çelişki” mantığıyla çalışır.</span>
+    </footer>
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
